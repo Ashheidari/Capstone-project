@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Restaurant',
     'rest_framework',
+    'rest_framework.authtoken',
+    'djoser',
 ]
 
 MIDDLEWARE = [
@@ -99,9 +101,17 @@ REST_FARMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
         'rest_framework_xml.renderers.XMLRenderer',
-        ]
+        ],
+    'DEFAULT_ATHENTICATION_CLASSES' : [
+        'rest_framework.authentication.TokenAuthenticaiton',
+    ]
 }
 
+# Djoser config
+
+DJOSER = {
+    'USER_ID_FIELD':'username'
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
