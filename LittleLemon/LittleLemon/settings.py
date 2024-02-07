@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Restaurant',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -89,6 +90,16 @@ DATABASES = {
             'init_command': "SET sql_mode = 'STRICT_TRANS_TABLES'"
         }
     }
+}
+
+# Rest_framework settings
+
+REST_FARMEWORK = {
+    'DEFAULT_RENDERER_CLASSES' : [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+        'rest_framework_xml.renderers.XMLRenderer',
+        ]
 }
 
 
